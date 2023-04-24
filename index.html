@@ -1,0 +1,1898 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Roboto Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Custom CSS Link -->
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>Teesnap</title>
+    </head>
+    <body>
+        <!-- ============== Header Start ================ -->
+        <header class="header">
+            <div class="header__logo">
+                <div class="header__logo-avatar">
+                    <img src="./images/icons/avatar.svg" alt="Avatar icon" />
+                </div>
+                <div class="header__logo-text">
+                    <h6>Teesnap Support</h6>
+                    <p>Proshop</p>
+                </div>
+            </div>
+
+            <nav class="header__nav">
+                <div class="header__calendar">
+                    <button class="header__calendar-btn" id="reset-date">
+                        <img src="./images/icons/calendar-dark.svg" alt="Calendar icon" />
+                    </button>
+
+                    <div class="header__calendar-wrapper">
+                        <button id="date-prev-btn">
+                            <img src="./images/icons/chevron-left.svg" alt="Arrow icon" />
+                        </button>
+                        <div class="header__calendar-date">
+                            <p id="date-content"></p>
+                        </div>
+                        <button id="date-next-btn">
+                            <img src="./images/icons/chevron-right.svg" alt="Arrow icon" />
+                        </button>
+                    </div>
+                </div>
+
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <button class="header__nav-btn active">
+                            <!-- <img src="./images/icons/users-group.svg" alt="" /> -->
+                            <svg
+                                width="48"
+                                height="48"
+                                viewBox="0 0 48 48"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M0.282004 28.8685C0.0494085 28.5513 0.312023 27.8761 0.312023 27.8761L10.4539 22.8784C10.4539 22.8784 11.6864 20.2693 10.5539 19.5705C8.86297 18.5271 8.94302 15.881 8.94302 15.881C8.94302 15.881 8.31288 10.3761 9.18318 7.94212C9.70917 6.47109 10.8624 5.81622 12.361 5.38733C14.1645 4.87119 15.436 4.84481 17.1798 5.52948C19.1162 6.28977 19.7507 6.77087 20.1975 8.26747C21.0382 11.083 19.9574 16.2064 19.9574 16.2064C19.9574 16.2064 19.1689 19.4937 18.1263 19.7942C16.8388 20.1652 18.0262 23.1021 18.0262 23.1021L28.1921 28.6997C28.1921 28.6997 28.3955 29.3762 28.1621 29.692C26.7252 31.6359 24.9024 32.349 22.1906 33.4886C19.0731 34.7988 16.8254 35.1708 13.4238 35.026C10.2873 34.8925 8.44247 34.4188 5.6691 33.0006C3.14342 31.7091 1.27458 30.2219 0.282004 28.8685Z"
+                                    fill="currentColor"
+                                />
+                                <path
+                                    d="M47.7138 28.8685C47.9464 28.5513 47.6838 27.8761 47.6838 27.8761L37.542 22.8784C37.542 22.8784 36.3095 20.2693 37.4419 19.5705C39.1329 18.5271 39.0528 15.881 39.0528 15.881C39.0528 15.881 39.683 10.3761 38.8127 7.94212C38.2867 6.47109 37.1335 5.81622 35.6348 5.38733C33.8313 4.87119 32.5599 4.84481 30.8161 5.52948C28.8797 6.28977 28.2452 6.77087 27.7983 8.26747C26.9576 11.083 28.0385 16.2064 28.0385 16.2064C28.0385 16.2064 28.8269 19.4937 29.8695 19.7942C31.157 20.1652 29.9696 23.1021 29.9696 23.1021L19.8038 28.6997C19.8038 28.6997 19.6003 29.3762 19.8338 29.692C21.2706 31.6359 23.0935 32.349 25.8052 33.4886C28.9227 34.7988 31.1705 35.1708 34.572 35.026C37.7085 34.8925 39.5534 34.4188 42.3268 33.0006C44.8524 31.7091 46.7213 30.2219 47.7138 28.8685Z"
+                                    fill="currentColor"
+                                />
+                                <path
+                                    d="M4.07297 37.6817C3.72147 37.2131 4.07297 36.1817 4.07297 36.1817L18.573 28.1817C18.573 28.1817 20.2472 24.1864 18.573 23.1817C16.073 21.6814 16.073 17.6817 16.073 17.6817C16.073 17.6817 14.9167 9.39624 16.073 5.68168C16.7718 3.43666 18.4167 2.39624 20.573 1.68167C23.1679 0.821748 25.012 0.725185 27.573 1.68139C30.4167 2.74319 31.3587 3.44145 32.073 5.68168C33.4167 9.89624 32.073 17.6817 32.073 17.6817C32.073 17.6817 31.073 22.6814 29.573 23.1817C27.7207 23.7995 29.573 28.1817 29.573 28.1817L44.573 36.1817C44.573 36.1817 44.8979 37.1943 44.573 37.6817C42.573 40.6814 39.9587 41.8396 36.073 43.6817C31.6059 45.7994 28.3599 46.4614 23.4167 46.3945C18.8587 46.3328 16.1604 45.6997 12.073 43.6817C8.35061 41.8439 5.57297 39.6814 4.07297 37.6817Z"
+                                    fill="currentColor"
+                                    class="users-stroke"
+                                    stroke-width="1.5"
+                                />
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="header__nav-item">
+                        <button class="header__nav-btn">
+                            <!-- <img src="./images/icons/steps.svg" alt="Steps icon" /> -->
+                            <svg
+                                width="41"
+                                height="36"
+                                viewBox="0 0 41 36"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <rect width="26" height="10" fill="currentColor" />
+                                <rect x="8" y="13" width="26" height="10" fill="currentColor" />
+                                <rect x="15" y="26" width="26" height="10" fill="currentColor" />
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="header__nav-item">
+                        <button class="header__nav-btn active">
+                            <!-- <img src="./images/icons/car.svg" alt="Car icon" /> -->
+                            <svg
+                                width="40"
+                                height="35"
+                                viewBox="0 0 40 35"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M0.787342 27.359V21.2188H3.78586V1.30553H1.40416V0H25.4608V1.30553H23.2303L30.7582 16.6775L36.9495 18.4582V25.7992C38.3838 26.6739 39.3398 28.2421 39.3398 30.0317C39.3398 32.7755 37.0923 35 34.3196 35C31.756 35 29.6413 33.098 29.3372 30.6421H10.0021C9.69804 33.098 7.58332 35 5.01965 35C2.24715 35 -0.000370026 32.7755 -0.000370026 30.0317C-0.000370026 29.0476 0.288723 28.1307 0.787342 27.359ZM34.3196 32.2365C35.5502 32.2365 36.5474 31.2494 36.5474 30.0317C36.5474 28.8138 35.5502 27.8267 34.3196 27.8267C33.0892 27.8267 32.0918 28.8138 32.0918 30.0317C32.0918 31.2494 33.0892 32.2365 34.3196 32.2365ZM8.72937 21.2188L6.40191 12.7902H8.39095L10.7492 21.2188H15.7197V23.1094H14.5671V28.1233H25.4608V23.9233L23.4129 21.9392V18.1542L19.2398 14.9132L17.8548 16.5159L16.9418 15.7431L20.6505 11.4513L21.5634 12.2242L20.3758 13.5986L24.3575 16.6775H29.2925L21.7645 1.30553H5.10503V21.2188H8.72937ZM5.01965 32.2365C6.25021 32.2365 7.24762 31.2494 7.24762 30.0317C7.24762 28.8138 6.25021 27.8267 5.01965 27.8267C3.78943 27.8267 2.79202 28.8138 2.79202 30.0317C2.79202 31.2494 3.78943 32.2365 5.01965 32.2365Z"
+                                    fill="currentColor"
+                                />
+                            </svg>
+                        </button>
+                    </li>
+
+                    <li class="header__scores">
+                        <div class="header__scores-score">
+                            <input type="radio" name="scores" value="9" />
+                            <span class="header__nav-btn">9</span>
+                        </div>
+                        <div class="header__scores-score">
+                            <input type="radio" name="scores" value="18" checked />
+                            <span class="header__nav-btn">18</span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <button class="menu__btn" id="header__menu-btn">
+                <span class="menu__btn-top"></span>
+                <span class="menu__btn-middle"></span>
+                <span class="menu__btn-bottom"></span>
+            </button>
+        </header>
+        <!-- ============== Header End ================ -->
+
+        <!-- ============== Main Start ================ -->
+        <main class="main">
+            <section class="table-section">
+                <div class="table-wrapper">
+                    <!-- Row 1 -->
+                    <div class="table__row played">
+                        <div class="table__row-time">
+                            <h3>6:30 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <!-- Scores -->
+                        <div class="table__row-scores">
+                            <div class="table__detail">
+                                <h4>Really Long Name Name</h4>
+                                <p><b class="blue-text">GolfNow</b></p>
+                            </div>
+
+                            <div class="table__score">
+                                <div class="table__score-info">
+                                    <img src="./images/icons/arrow.svg" alt="Arrow icon" />
+                                    <div class="table__score-scores">
+                                        <span>18</span>
+                                    </div>
+                                </div>
+                                <div class="table__rounds">
+                                    <div class="table__rounds-icon">
+                                        <img src="./images/icons/car-sm.svg" alt="Car icon" />
+                                        <span>1</span>
+                                    </div>
+                                    <div class="table__rounds-count">
+                                        <span>+2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="table__row played">
+                        <div class="table__row-time">
+                            <h3>6:40 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <!-- Scores -->
+                        <div class="table__row-scores gray-bg">
+                            <div class="table__detail">
+                                <h4>Really Long Name Name</h4>
+                                <p>Checked In | Paid | <b class="blue-text">GolfNow</b></p>
+                            </div>
+
+                            <div class="table__score">
+                                <div class="table__score-info">
+                                    <img src="./images/icons/arrow.svg" alt="Arrow icon" />
+                                    <div class="table__score-scores">
+                                        <span>18</span>
+                                    </div>
+                                </div>
+                                <div class="table__rounds">
+                                    <div class="table__rounds-icon">
+                                        <img src="./images/icons/car-sm.svg" alt="Car icon" />
+                                        <span class="gray-bg">59</span>
+                                    </div>
+                                    <div class="table__rounds-count">
+                                        <span>+2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="table__row played">
+                        <div class="table__row-time">
+                            <h3>6:50 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <!-- Scores -->
+                        <div class="table__row-scores pink-bg">
+                            <div class="table__detail">
+                                <h4>Really Long Name Name</h4>
+                                <p>
+                                    Late | Pre-Paid |
+                                    <img src="./images/icons/teesnap.png" alt="Teesnap logo" />
+                                </p>
+                            </div>
+
+                            <div class="table__score">
+                                <div class="table__score-info">
+                                    <div class="table__score-scores">
+                                        <span>9</span>
+                                    </div>
+                                </div>
+                                <div class="table__rounds">
+                                    <div class="table__rounds-icon">
+                                        <img src="./images/icons/car-sm.svg" alt="Car icon" />
+                                        <span class="pink-bg">12</span>
+                                    </div>
+                                    <div class="table__rounds-count failed">
+                                        <span>+2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 4 -->
+                    <div class="table__row played">
+                        <div class="table__row-time">
+                            <h3>7:00 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <!-- Scores -->
+                        <div class="table__row-scores blue-bg">
+                            <div class="table__detail">
+                                <h4>Really Long Name Name</h4>
+                                <p>Late | Pre-Paid | <b class="blue-text">GolfNow</b></p>
+                            </div>
+
+                            <div class="table__score">
+                                <div class="table__score-info">
+                                    <!-- <img src="./images/icons/arrow.png" alt="Arrow icon" /> -->
+                                    <div class="table__score-scores">
+                                        <span>9</span>
+                                    </div>
+                                </div>
+                                <div class="table__rounds">
+                                    <div class="table__rounds-icon">
+                                        <img src="./images/icons/car-sm.svg" alt="Car icon" />
+                                        <span class="blue-bg">117</span>
+                                    </div>
+                                    <div class="table__rounds-count failed">
+                                        <span>+2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 5 -->
+                    <div class="table__row played">
+                        <div class="table__row-time">
+                            <h3>7:10 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <!-- Scores -->
+                        <div class="table__row-scores">
+                            <div class="table__detail">
+                                <h4>Really Long Name Name</h4>
+                                <p><b class="blue-text">GolfNow</b></p>
+                            </div>
+
+                            <div class="table__score">
+                                <div class="table__score-info">
+                                    <img src="./images/icons/arrow.svg" alt="Arrow icon" />
+                                    <div class="table__score-scores">
+                                        <span>18</span>
+                                    </div>
+                                </div>
+                                <div class="table__rounds">
+                                    <div class="table__rounds-icon">
+                                        <img src="./images/icons/car-sm.svg" alt="Car icon" />
+                                        <span>24</span>
+                                    </div>
+                                    <div class="table__rounds-count">
+                                        <span>+2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 6 -->
+                    <div class="table__row active">
+                        <div class="table__row-time">
+                            <h3>7:20 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 7 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>7:30 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 8 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>7:40 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 9 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>7:50 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 10 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>8:00 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 11 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>8:10 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 12 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>8:20 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 13 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>8:30 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 14 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>8:40 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 15 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>8:50 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 16 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>9:00 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 17 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>9:10 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 18 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>9:20 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 19 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>9:30 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 20 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>9:40 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 21 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>9:50 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 22 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>10:00 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 23 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>10:10 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 24 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>10:20 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 25 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>10:30 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 26 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>10:40 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 27 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>10:50 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 28 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>11:00 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 29 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>11:10 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 30 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>11:20 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 31 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>11:30 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 32 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>11:40 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 33 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>11:50 am</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 34 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>12:00 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 35 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>12:10 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 36 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>12:20 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 37 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>12:30 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 38 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>12:40 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 39 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>12:50 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 40 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>1:00 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 41 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>1:10 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 42 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>1:20 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 43 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>1:30 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 44 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>1:40 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 45 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>1:50 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 46 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>2:00 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 47 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>2:10 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 48 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>2:20 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 49 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>2:30 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 50 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>2:40 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 51 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>2:50 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 52 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>3:00 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 53 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>3:10 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 54 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>3:20 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 55 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>3:30 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 56 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>3:40 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 57 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>3:50 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 58 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>4:00 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 59 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>4:10 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 60 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>4:20 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 61 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>4:30 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 62 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>4:40 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 63 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>4:50 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 64 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>5:00 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 65 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>5:10 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 66 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>5:20 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 67 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>5:30 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 68 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>5:40 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 69 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>5:50 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 70 -->
+                    <div class="table__row">
+                        <div class="table__row-time">
+                            <h3>6:00 pm</h3>
+                            <p>RED</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                        <div class="table__row-price">
+                            <p>$39</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- ============== Main End ================ -->
+
+        <!-- ============== Footer Start ================ -->
+        <footer class="footer">
+            <div class="footer__dropdown" id="footer-dropdown">
+                <button class="footer__dropdown-btn">
+                    <span>Teesnap Golf Links</span>
+                    <img src="./images/icons/arrow-down.svg" alt="Arrow icon" />
+                </button>
+
+                <ul class="footer__dropdown-list">
+                    <li>
+                        <a href="#" class="footer__dropdown-link">Link 1</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__dropdown-link">Link 2</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__dropdown-link">Link 3</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__dropdown-link">Link 4</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__dropdown-link">Link 5</a>
+                    </li>
+                </ul>
+            </div>
+
+            <nav class="footer-nav">
+                <ul class="footer__list">
+                    <!-- Item 1 -->
+                    <li class="footer__list-item">
+                        <a href="#" class="footer__list-link active">
+                            <span class="footer__list-icon">
+                                <img
+                                    src="./images/icons/calendar-active.svg"
+                                    class="footer__active-icon"
+                                    alt="Calendar icon"
+                                />
+                                <img
+                                    src="./images/icons/calendar-inactive.svg"
+                                    class="footer__inactive-icon"
+                                    alt="Calendar icon"
+                                />
+                            </span>
+                            <span>Tee Sheet</span>
+                        </a>
+                    </li>
+
+                    <!-- Item 2 -->
+                    <li class="footer__list-item">
+                        <a href="#" class="footer__list-link">
+                            <span class="footer__list-icon">
+                                <img
+                                    src="./images/icons/users-active.svg"
+                                    class="footer__active-icon"
+                                    alt="User icon"
+                                />
+                                <img
+                                    src="./images/icons/users-inactive.svg"
+                                    class="footer__inactive-icon"
+                                    alt="User icon"
+                                />
+                            </span>
+                            <span>Customers</span>
+                        </a>
+                    </li>
+
+                    <!-- Item 3 -->
+                    <li class="footer__list-item">
+                        <a href="#" class="footer__list-link">
+                            <span class="footer__list-icon">
+                                <img
+                                    src="./images/icons/tables-active.svg"
+                                    class="footer__active-icon"
+                                    alt="Table icon"
+                                />
+                                <img
+                                    src="./images/icons/tables-inactive.svg"
+                                    class="footer__inactive-icon"
+                                    alt="Table icon"
+                                />
+                            </span>
+                            <span>Tables</span>
+                        </a>
+                    </li>
+
+                    <!-- Item 4 -->
+                    <li class="footer__list-item">
+                        <a href="#" class="footer__list-link">
+                            <span class="footer__list-icon">
+                                <img
+                                    src="./images/icons/tabs-active.svg"
+                                    class="footer__active-icon"
+                                    alt="Tab icon"
+                                />
+                                <img
+                                    src="./images/icons/tabs-inactive.svg"
+                                    class="footer__inactive-icon"
+                                    alt="Tab icon"
+                                />
+                            </span>
+                            <span>Tabs</span>
+                        </a>
+                    </li>
+
+                    <!-- Item 5 -->
+                    <li class="footer__list-item">
+                        <a href="#" class="footer__list-link">
+                            <span class="footer__list-icon ticket-icon">
+                                <img
+                                    src="./images/icons/ticket-active.svg"
+                                    class="footer__active-icon"
+                                    alt="Ticket icon"
+                                />
+                                <img
+                                    src="./images/icons/ticket-inactive.svg"
+                                    class="footer__inactive-icon"
+                                    alt="Ticket icon"
+                                />
+                            </span>
+                            <span>Tickets</span>
+                        </a>
+                    </li>
+
+                    <!-- Item 6 -->
+                    <li class="footer__list-item">
+                        <a href="#" class="footer__list-link">
+                            <span class="footer__list-icon">
+                                <img
+                                    src="./images/icons/checkout-active.svg"
+                                    class="footer__active-icon"
+                                    alt="Icon"
+                                />
+                                <img
+                                    src="./images/icons/checkout-inactive.svg"
+                                    class="footer__inactive-icon"
+                                    alt="Icon"
+                                />
+                            </span>
+                            <span>Checkout</span>
+                        </a>
+                    </li>
+
+                    <!-- Item 7 -->
+                    <li class="footer__list-item">
+                        <a href="#" class="footer__list-link">
+                            <span class="footer__list-icon">
+                                <img
+                                    src="./images/icons/purchase-active.svg"
+                                    class="footer__active-icon"
+                                    alt="Icon"
+                                />
+                                <img
+                                    src="./images/icons/purchase-inactive.svg"
+                                    class="footer__inactive-icon"
+                                    alt="Icon"
+                                />
+                            </span>
+                            <span>Purchases</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <button class="menu__btn" id="footer__menu-btn">
+                <span class="menu__btn-top"></span>
+                <span class="menu__btn-middle"></span>
+                <span class="menu__btn-bottom"></span>
+            </button>
+        </footer>
+        <!-- ============== Footer End ================ -->
+
+        <!-- ============== Javascript Links ================ -->
+        <script src="https://unpkg.com/@better-scroll/core@latest/dist/core.min.js"></script>
+        <script src="./js/index.js"></script>
+    </body>
+</html>

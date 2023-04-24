@@ -187,7 +187,6 @@ h6 {
     padding: 38px 40px;
     border-bottom: 2px solid var(--light-100);
     /* zoom: 75%; */
-    border: 1px solid red;
 }
 
 .header__logo {
@@ -588,7 +587,8 @@ h6 {
     /* position: relative; */
     flex: 1;
     /* max-height: calc(133vh - 302px); */
-    overflow: auto;
+    /* overflow: auto; */
+    overflow: hidden;
 }
 
 .table-section {
@@ -596,7 +596,7 @@ h6 {
     padding-right: 2px;
     max-height: 100%;
     /* zoom: 75%; */
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .table-wrapper {

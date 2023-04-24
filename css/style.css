@@ -585,14 +585,14 @@ h6 {
 
 /* ============== Main Styling Start ============== */
 .main {
-    position: relative;
+    /* position: relative; */
     flex: 1;
     /* max-height: calc(133vh - 302px); */
     overflow: auto;
 }
 
 .table-section {
-    /* position: relative; */
+    position: relative;
     padding-right: 2px;
     max-height: 100%;
     /* zoom: 75%; */

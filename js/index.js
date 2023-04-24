@@ -1,5 +1,10 @@
 'use strict';
-
+function setWindowHeight() {
+    const windowHeight = window.innerHeight;
+    document.body.style.height = windowHeight + 'px';
+}
+setWindowHeight();
+window.addEventListener('resize', setWindowHeight, false);
 // ============= Header Menu Buttons
 const headerMenuBtns = document.querySelectorAll('.header__nav-item .header__nav-btn');
 

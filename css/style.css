@@ -41,7 +41,7 @@ body {
     flex-direction: column;
     background-color: var(--body-background);
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     font-family: var(--font-roboto);
     color: var(--text-color);
     font-style: normal;

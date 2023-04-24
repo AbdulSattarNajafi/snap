@@ -129,5 +129,6 @@ let bs = new BScroll(wrapper, {
     probeType: 3,
     pullUpLoad: true,
     wheel: true,
-    // scrollbar: true,
+    scrollX: true,
+    scrollbar: true,
 });

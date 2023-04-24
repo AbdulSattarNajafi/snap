@@ -41,7 +41,6 @@ body {
     flex-direction: column;
     background-color: var(--body-background);
     width: 100%;
-    /* height: 100vh; */
     font-family: var(--font-roboto);
     color: var(--text-color);
     font-style: normal;
@@ -186,7 +185,6 @@ h6 {
     background-color: var(--light);
     padding: 38px 40px;
     border-bottom: 2px solid var(--light-100);
-    /* zoom: 75%; */
 }
 
 .header__logo {
@@ -281,11 +279,6 @@ h6 {
 .header__nav-item {
     margin-right: 18px;
 }
-
-/* .header__nav-notification {
-    display: flex;
-    align-items: center;
-} */
 
 .header__nav-btn {
     display: flex;
@@ -521,6 +514,7 @@ h6 {
         position: relative;
         padding: 16px;
         border-bottom: 1px solid var(--light-100);
+        zoom: 75%;
         z-index: 50;
     }
     #header__menu-btn {
@@ -595,8 +589,8 @@ h6 {
     position: relative;
     padding-right: 2px;
     max-height: 100%;
-    /* zoom: 75%; */
     overflow: hidden;
+    /* overflow-x: auto; */
 }
 
 .table-wrapper {
@@ -863,17 +857,12 @@ h6 {
     }
 }
 @media (max-width: 991.98px) {
-    /* .main {
-        width: 100%;
-        max-height: calc(133vh - 153px);
-    } */
+    .table-section {
+        zoom: 75%;
+    }
 }
 
 @media (max-width: 767.98px) {
-    /* .main {
-        width: 100%;
-        max-height: calc(133vh - 133px);
-    } */
     .table__row {
         grid-template-columns: 100px 280px repeat(3, 1fr);
     }
@@ -897,7 +886,7 @@ h6 {
     }
 }
 @media (max-width: 620.98px) {
-    .table-section {
+    .table-wrapper {
         min-width: 620px;
     }
     .table__row {
@@ -914,7 +903,6 @@ h6 {
     background-color: var(--footer-bg);
     padding: 10px 44px;
     margin-top: auto;
-    /* zoom: 75%; */
 }
 
 .footer__dropdown {
@@ -1150,6 +1138,9 @@ h6 {
 }
 
 @media (max-width: 991.98px) {
+    .footer {
+        zoom: 75%;
+    }
     .footer__dropdown-btn {
         font-size: 16px;
         line-height: 20px;
@@ -1163,7 +1154,7 @@ h6 {
         padding: 10px 16px;
     }
     .footer__list-link {
-        width: 70px;
+        width: 80px;
         height: 60px;
         font-size: 12px;
         line-height: 16px;

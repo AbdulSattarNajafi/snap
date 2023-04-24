@@ -186,7 +186,8 @@ h6 {
     background-color: var(--light);
     padding: 38px 40px;
     border-bottom: 2px solid var(--light-100);
-    zoom: 75%;
+    /* zoom: 75%; */
+    border: 1px solid red;
 }
 
 .header__logo {
@@ -594,7 +595,7 @@ h6 {
     /* position: relative; */
     padding-right: 2px;
     max-height: 100%;
-    zoom: 75%;
+    /* zoom: 75%; */
     /* overflow: hidden; */
 }
 
@@ -913,7 +914,7 @@ h6 {
     background-color: var(--footer-bg);
     padding: 10px 44px;
     margin-top: auto;
-    zoom: 75%;
+    /* zoom: 75%; */
 }
 
 .footer__dropdown {

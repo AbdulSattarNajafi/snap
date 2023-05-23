@@ -11,6 +11,10 @@
             href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
             rel="stylesheet"
         />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+            rel="stylesheet"
+        />
         <!-- Custom CSS Link -->
         <link rel="stylesheet" href="./css/style.css" />
         <title>Teesnap</title>
@@ -111,12 +115,10 @@
 
                     <li class="header__scores">
                         <div class="header__scores-score">
-                            <input type="radio" name="scores" value="9" />
                             <span class="header__nav-btn">9</span>
                         </div>
                         <div class="header__scores-score">
-                            <input type="radio" name="scores" value="18" checked />
-                            <span class="header__nav-btn">18</span>
+                            <span class="header__nav-btn active">18</span>
                         </div>
                     </li>
                 </ul>
@@ -140,7 +142,7 @@
                             <p>RED</p>
                         </div>
                         <!-- Scores -->
-                        <div class="table__row-scores">
+                        <div class="table__row-scores" data-modal="simple-modal">
                             <div class="table__detail">
                                 <h4>Really Long Name Name</h4>
                                 <p><b class="blue-text">GolfNow</b></p>
@@ -183,7 +185,7 @@
                             <p>RED</p>
                         </div>
                         <!-- Scores -->
-                        <div class="table__row-scores gray-bg">
+                        <div class="table__row-scores gray-bg" data-modal="bill-refund-modal">
                             <div class="table__detail">
                                 <h4>Really Long Name Name</h4>
                                 <p>Checked In | Paid | <b class="blue-text">GolfNow</b></p>
@@ -226,7 +228,7 @@
                             <p>RED</p>
                         </div>
                         <!-- Scores -->
-                        <div class="table__row-scores pink-bg">
+                        <div class="table__row-scores pink-bg" data-modal="bill-refunded-modal">
                             <div class="table__detail">
                                 <h4>Really Long Name Name</h4>
                                 <p>
@@ -271,7 +273,7 @@
                             <p>RED</p>
                         </div>
                         <!-- Scores -->
-                        <div class="table__row-scores blue-bg">
+                        <div class="table__row-scores blue-bg" data-modal="cash-refund-modal">
                             <div class="table__detail">
                                 <h4>Really Long Name Name</h4>
                                 <p>Late | Pre-Paid | <b class="blue-text">GolfNow</b></p>
@@ -314,7 +316,7 @@
                             <p>RED</p>
                         </div>
                         <!-- Scores -->
-                        <div class="table__row-scores">
+                        <div class="table__row-scores" data-modal="cash-refunded-modal">
                             <div class="table__detail">
                                 <h4>Really Long Name Name</h4>
                                 <p><b class="blue-text">GolfNow</b></p>
@@ -1718,6 +1720,1171 @@
             </section>
         </main>
         <!-- ============== Main End ================ -->
+
+        <!-- ============== Modals Start ============== -->
+        <div class="modal-backdrop"></div>
+
+        <!-- Simple Modal -->
+        <div class="modal simple-modal">
+            <div class="modal__header">
+                <h3 class="modal__header-title">Transaction Details</h3>
+                <button class="modal__header-btn">Close</button>
+            </div>
+
+            <div class="modal__body">
+                <div class="modal__body-collapse">
+                    <div class="modal__body-accordions custom-scrollbar">
+                        <!-- Accordion 1 -->
+                        <div class="accordion active">
+                            <div class="accordion__header">
+                                <div class="accordion__header-title">
+                                    <img src="./images/icons/accordion-1.svg" alt="icon" />
+                                    <h4>Total Bill - Split Between 2 Transactions</h4>
+                                </div>
+                                <button class="accordion__header-btn">
+                                    <span class="accordion__header-icon">
+                                        <img src="./images/icons/accordion-btn.svg" alt="icon" />
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="accordion__body">
+                                <ul class="accordion__list">
+                                    <li class="accordion__list-item">
+                                        <p>Hot Diggity Dog</p>
+                                        <p>$4.77</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Keith’s Seattle Salmon</p>
+                                        <p>$2.50</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Titleist Pro V Golf Ball’s</p>
+                                        <p>$55.00</p>
+                                    </li>
+                                </ul>
+                                <div class="accordion__results">
+                                    <div class="accordion__results-buttons">
+                                        <button>Print/Email Receipt</button>
+                                        <button>Issue Refund</button>
+                                    </div>
+                                    <div class="accordion__results-calculation">
+                                        <div class="accordion__results-row">
+                                            <p>Sub Total:</p>
+                                            <p>$62.27</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tax:</p>
+                                            <p>$1.87</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tip:</p>
+                                            <p>$6.00</p>
+                                        </div>
+                                        <div class="accordion__results-row font-semibold">
+                                            <p>Total:</p>
+                                            <p>$70.14</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion 2 -->
+                        <div class="accordion">
+                            <div class="accordion__header">
+                                <div class="accordion__header-title">
+                                    <img src="./images/icons/accordion-2.png" alt="icon" />
+                                    <h4>Transaction 1 - Cash</h4>
+                                </div>
+                                <button class="accordion__header-btn">
+                                    <span class="accordion__header-icon">
+                                        <img src="./images/icons/accordion-btn.svg" alt="icon" />
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="accordion__body">
+                                <ul class="accordion__list">
+                                    <li class="accordion__list-item">
+                                        <p>Hot Diggity Dog</p>
+                                        <p>$2.38</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Keith’s Seattle Salmon</p>
+                                        <p>$1.25</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Titleist Pro V Golf Ball’s</p>
+                                        <p>$27.50</p>
+                                    </li>
+                                </ul>
+                                <div class="accordion__results">
+                                    <div class="accordion__results-buttons">
+                                        <button>Print/Email Receipt</button>
+                                        <button>Issue Refund</button>
+                                    </div>
+                                    <div class="accordion__results-calculation">
+                                        <div class="accordion__results-row">
+                                            <p>Sub Total:</p>
+                                            <p>$31.13</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tax:</p>
+                                            <p>$0.93</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tip:</p>
+                                            <p>$2.00</p>
+                                        </div>
+                                        <div class="accordion__results-row font-semibold">
+                                            <p>Total:</p>
+                                            <p>$34.06</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion 3 -->
+                        <div class="accordion">
+                            <div class="accordion__header">
+                                <div class="accordion__header-title">
+                                    <img src="./images/icons/accordion-3.png" alt="icon" />
+                                    <h4>Transaction 2 - Credit Card **** 8076</h4>
+                                </div>
+                                <button class="accordion__header-btn">
+                                    <span class="accordion__header-icon">
+                                        <img src="./images/icons/accordion-btn.svg" alt="icon" />
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="accordion__body">
+                                <ul class="accordion__list">
+                                    <li class="accordion__list-item">
+                                        <p>Hot Diggity Dog</p>
+                                        <p>$2.39</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Keith’s Seattle Salmon</p>
+                                        <p>$1.25</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Titleist Pro V Golf Ball’s</p>
+                                        <p>$27.50</p>
+                                    </li>
+                                </ul>
+                                <div class="accordion__results">
+                                    <div class="accordion__results-buttons">
+                                        <button>Print/Email Receipt</button>
+                                        <button>Issue Refund</button>
+                                    </div>
+                                    <div class="accordion__results-calculation">
+                                        <div class="accordion__results-row">
+                                            <p>Sub Total:</p>
+                                            <p>$31.13</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tax:</p>
+                                            <p>$0.93</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tip:</p>
+                                            <p>$2.00</p>
+                                        </div>
+                                        <div class="accordion__results-row font-semibold">
+                                            <p>Total:</p>
+                                            <p>$34.06</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__body-details custom-scrollbar">
+                    <div class="modal__details-row">
+                        <h3>Customer</h3>
+                        <p>Greg Blackwell</p>
+                    </div>
+                    <div class="modal__details-row">
+                        <h3>Email</h3>
+                        <p>blackwellgolf75@gmail.com</p>
+                    </div>
+                    <div class="modal__details-row">
+                        <h3>Purchase Date</h3>
+                        <p>August 15, 2022 at 6:36:46 AM</p>
+                    </div>
+                    <div class="modal__details-row">
+                        <h3>Purchase Number</h3>
+                        <p>af0c6a1d-d136-4e53-afeb-ee2ef648c58b</p>
+                    </div>
+                    <div class="modal__details-row">
+                        <h3>Employee Name</h3>
+                        <p>System User</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bill Refund Modal -->
+        <div class="modal bill-refund-modal">
+            <div class="modal__header">
+                <h3 class="modal__header-title">Transaction Details</h3>
+                <button class="modal__header-btn">Close</button>
+            </div>
+
+            <div class="modal__body">
+                <div class="modal__body-collapse">
+                    <div class="modal__body-accordions custom-scrollbar">
+                        <!-- Accordion 1 -->
+                        <div class="accordion active">
+                            <div class="accordion__header">
+                                <div class="accordion__header-title">
+                                    <img src="./images/icons/accordion-1.svg" alt="icon" />
+                                    <h4>Select Items to Refund</h4>
+                                </div>
+                                <div class="accordion__header-select">
+                                    <select name="refund-bills" id="refund-bills">
+                                        <option value="">Refund To</option>
+                                        <option value="credit-card">Credit Card****8076</option>
+                                        <option value="club-credit-card">Club Credit</option>
+                                        <option value="gift-card">Gift Card</option>
+                                    </select>
+                                    <button class="accordion__header-cancel">Cancel</button>
+                                </div>
+                            </div>
+                            <div class="accordion__body">
+                                <form class="accrodion__form">
+                                    <!-- Row 1 -->
+                                    <div class="accrodion__form-row">
+                                        <div class="accrodion__form-checkbox">
+                                            <input type="checkbox" id="doggity" />
+                                            <label for="doggity">Hot Diggity Dog</label>
+                                        </div>
+                                        <div class="accrodion__form-price">
+                                            <p>$4.77</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Row 2 -->
+                                    <div class="accrodion__form-row">
+                                        <div class="accrodion__form-checkbox">
+                                            <input type="checkbox" id="salmon" checked />
+                                            <label for="salmon">Keith’s Seattle Salmon</label>
+                                        </div>
+                                        <div class="accrodion__form-price">
+                                            <p>$</p>
+                                            <input type="text" value="2.50" />
+                                        </div>
+                                    </div>
+
+                                    <!-- Row 3 -->
+                                    <div class="accrodion__form-row">
+                                        <div class="accrodion__form-checkbox">
+                                            <input type="checkbox" id="golf" checked />
+                                            <label for="golf"
+                                                >Titleist Pro V Golf Ball’s
+                                                <span class="green-circle"></span>
+                                            </label>
+                                        </div>
+                                        <div class="accrodion__form-price">
+                                            <p>$</p>
+                                            <input type="text" value="55.00" />
+                                        </div>
+                                    </div>
+
+                                    <!-- Row 4 -->
+                                    <div class="accrodion__form-row">
+                                        <div class="accrodion__form-checkbox">
+                                            <input type="checkbox" id="tip" checked />
+                                            <label for="tip">Tip</label>
+                                        </div>
+                                        <div class="accrodion__form-price">
+                                            <p>$</p>
+                                            <input type="text" value="6.00" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="accrodion__switch-wrapper">
+                                            <p>
+                                                <span class="green-circle"></span> Return Eligible
+                                                Items to Inventory / Tee Sheet
+                                            </p>
+                                            <div>
+                                                <div class="toggle">
+                                                    <input type="checkbox" />
+                                                    <label></label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion__results">
+                                            <div>
+                                                <button
+                                                    type="submit"
+                                                    class="accrodion__form-submit"
+                                                >
+                                                    Process Refund
+                                                </button>
+                                            </div>
+
+                                            <div class="accordion__results-calculation">
+                                                <div class="accordion__results-row">
+                                                    <p>Refund Sub Total:</p>
+                                                    <p>$57.50</p>
+                                                </div>
+                                                <div class="accordion__results-row">
+                                                    <p>Refund Tax:</p>
+                                                    <p>$1.73</p>
+                                                </div>
+                                                <div class="accordion__results-row">
+                                                    <p>Refund Tip:</p>
+                                                    <p>$6.00</p>
+                                                </div>
+                                                <div class="accordion__results-row font-semibold">
+                                                    <p>Refund Total:</p>
+                                                    <p>$65.23</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Accordion 2 -->
+                        <div class="accordion">
+                            <div class="accordion__header">
+                                <div class="accordion__header-title">
+                                    <img src="./images/icons/accordion-2.png" alt="icon" />
+                                    <h4>Transaction 1 - Cash</h4>
+                                </div>
+                                <button class="accordion__header-btn">
+                                    <span class="accordion__header-icon">
+                                        <img src="./images/icons/accordion-btn.svg" alt="icon" />
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="accordion__body">
+                                <ul class="accordion__list">
+                                    <li class="accordion__list-item">
+                                        <p>Hot Diggity Dog</p>
+                                        <p>$2.38</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Keith’s Seattle Salmon</p>
+                                        <p>$1.25</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Titleist Pro V Golf Ball’s</p>
+                                        <p>$27.50</p>
+                                    </li>
+                                </ul>
+                                <div class="accordion__results">
+                                    <div class="accordion__results-buttons">
+                                        <button>Print/Email Receipt</button>
+                                        <button>Issue Refund</button>
+                                    </div>
+                                    <div class="accordion__results-calculation">
+                                        <div class="accordion__results-row">
+                                            <p>Sub Total:</p>
+                                            <p>$31.13</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tax:</p>
+                                            <p>$0.93</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tip:</p>
+                                            <p>$2.00</p>
+                                        </div>
+                                        <div class="accordion__results-row font-semibold">
+                                            <p>Total:</p>
+                                            <p>$34.06</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion 3 -->
+                        <div class="accordion">
+                            <div class="accordion__header">
+                                <div class="accordion__header-title">
+                                    <img src="./images/icons/accordion-3.png" alt="icon" />
+                                    <h4>Transaction 2 - Credit Card **** 8076</h4>
+                                </div>
+                                <button class="accordion__header-btn">
+                                    <span class="accordion__header-icon">
+                                        <img src="./images/icons/accordion-btn.svg" alt="icon" />
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="accordion__body">
+                                <ul class="accordion__list">
+                                    <li class="accordion__list-item">
+                                        <p>Hot Diggity Dog</p>
+                                        <p>$2.39</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Keith’s Seattle Salmon</p>
+                                        <p>$1.25</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Titleist Pro V Golf Ball’s</p>
+                                        <p>$27.50</p>
+                                    </li>
+                                </ul>
+                                <div class="accordion__results">
+                                    <div class="accordion__results-buttons">
+                                        <button>Print/Email Receipt</button>
+                                        <button>Issue Refund</button>
+                                    </div>
+                                    <div class="accordion__results-calculation">
+                                        <div class="accordion__results-row">
+                                            <p>Sub Total:</p>
+                                            <p>$31.13</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tax:</p>
+                                            <p>$0.93</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tip:</p>
+                                            <p>$2.00</p>
+                                        </div>
+                                        <div class="accordion__results-row font-semibold">
+                                            <p>Total:</p>
+                                            <p>$34.06</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__body-details custom-scrollbar">
+                    <div class="modal__details-row">
+                        <h3>Customer</h3>
+                        <p>Greg Blackwell</p>
+                    </div>
+                    <div class="modal__details-row">
+                        <h3>Email</h3>
+                        <p>blackwellgolf75@gmail.com</p>
+                    </div>
+                    <div class="modal__details-row">
+                        <h3>Purchase Date</h3>
+                        <p>August 15, 2022 at 6:36:46 AM</p>
+                    </div>
+                    <div class="modal__details-row">
+                        <h3>Purchase Number</h3>
+                        <p>af0c6a1d-d136-4e53-afeb-ee2ef648c58b</p>
+                    </div>
+                    <div class="modal__details-row">
+                        <h3>Employee Name</h3>
+                        <p>System User</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bill Refunded Modal -->
+        <div class="modal bill-refunded-modal">
+            <div class="modal__header">
+                <h3 class="modal__header-title">Transaction Details</h3>
+                <button class="modal__header-btn">Close</button>
+            </div>
+
+            <div class="modal__body">
+                <div class="modal__body-collapse">
+                    <div class="modal__body-accordions custom-scrollbar">
+                        <!-- Accordion 1 -->
+                        <div class="accordion active">
+                            <div class="accordion__header">
+                                <div class="accordion__header-title">
+                                    <img src="./images/icons/accordion-1.svg" alt="icon" />
+                                    <h4>Total Bill - Paid with Credit Card ****8076</h4>
+                                </div>
+                                <button class="accordion__header-btn">
+                                    <span class="accordion__header-icon">
+                                        <img src="./images/icons/accordion-btn.svg" alt="icon" />
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="accordion__body">
+                                <ul class="accordion__list">
+                                    <li class="accordion__list-item">
+                                        <p>Hot Diggity Dog</p>
+                                        <p>$4.77</p>
+                                    </li>
+                                    <li class="accordion__list-item text-red">
+                                        <p>Keith’s Seattle Salmon</p>
+                                        <p>$2.50</p>
+                                    </li>
+                                    <li class="accordion__list-item text-red">
+                                        <p>Titleist Pro V Golf Ball’s</p>
+                                        <p>$55.00</p>
+                                    </li>
+                                </ul>
+                                <div class="accordion__results flex-start">
+                                    <div class="accordion__results-buttons between">
+                                        <div>
+                                            <button>Print/Email Receipt</button>
+                                            <button>Issue Refund</button>
+                                        </div>
+                                        <div class="accordion__results-note text-red">
+                                            <span>*</span>
+                                            <p>
+                                                tems in red have been refunded back to Credit Card
+                                                **** 8076
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="accordion__results-calculation">
+                                        <div class="accordion__results-row">
+                                            <p>Original Sub Total:</p>
+                                            <p>$62.27</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Original Tax:</p>
+                                            <p>$1.87</p>
+                                        </div>
+                                        <div class="accordion__results-row text-red">
+                                            <p>Tip:</p>
+                                            <p>$6.00</p>
+                                        </div>
+                                        <div class="accordion__results-row font-semibold">
+                                            <p>Original Total:</p>
+                                            <p>$70.14</p>
+                                        </div>
+                                        <div class="accordion__results-row text-red">
+                                            <p>Refund Sub Total:</p>
+                                            <p>$57.50</p>
+                                        </div>
+                                        <div class="accordion__results-row text-red">
+                                            <p>Refund Tax:</p>
+                                            <p>$1.73</p>
+                                        </div>
+                                        <div class="accordion__results-row text-red">
+                                            <p>Refund Tip:</p>
+                                            <p>$6.00</p>
+                                        </div>
+                                        <div class="accordion__results-row text-red font-semibold">
+                                            <p>Refund Total:</p>
+                                            <p>$65.23</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion 2 -->
+                        <div class="accordion">
+                            <div class="accordion__header">
+                                <div class="accordion__header-title">
+                                    <img src="./images/icons/accordion-2.png" alt="icon" />
+                                    <h4>Transaction 1 - Cash</h4>
+                                </div>
+                                <button class="accordion__header-btn">
+                                    <span class="accordion__header-icon">
+                                        <img src="./images/icons/accordion-btn.svg" alt="icon" />
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="accordion__body">
+                                <ul class="accordion__list">
+                                    <li class="accordion__list-item">
+                                        <p>Hot Diggity Dog</p>
+                                        <p>$2.38</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Keith’s Seattle Salmon</p>
+                                        <p>$1.25</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Titleist Pro V Golf Ball’s</p>
+                                        <p>$27.50</p>
+                                    </li>
+                                </ul>
+                                <div class="accordion__results">
+                                    <div class="accordion__results-buttons">
+                                        <button>Print/Email Receipt</button>
+                                        <button>Issue Refund</button>
+                                    </div>
+                                    <div class="accordion__results-calculation">
+                                        <div class="accordion__results-row">
+                                            <p>Sub Total:</p>
+                                            <p>$31.13</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tax:</p>
+                                            <p>$0.93</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tip:</p>
+                                            <p>$2.00</p>
+                                        </div>
+                                        <div class="accordion__results-row font-semibold">
+                                            <p>Total:</p>
+                                            <p>$34.06</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion 3 -->
+                        <div class="accordion">
+                            <div class="accordion__header">
+                                <div class="accordion__header-title">
+                                    <img src="./images/icons/accordion-3.png" alt="icon" />
+                                    <h4>Transaction 2 - Credit Card **** 8076</h4>
+                                </div>
+                                <button class="accordion__header-btn">
+                                    <span class="accordion__header-icon">
+                                        <img src="./images/icons/accordion-btn.svg" alt="icon" />
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="accordion__body">
+                                <ul class="accordion__list">
+                                    <li class="accordion__list-item">
+                                        <p>Hot Diggity Dog</p>
+                                        <p>$2.39</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Keith’s Seattle Salmon</p>
+                                        <p>$1.25</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Titleist Pro V Golf Ball’s</p>
+                                        <p>$27.50</p>
+                                    </li>
+                                </ul>
+                                <div class="accordion__results">
+                                    <div class="accordion__results-buttons">
+                                        <button>Print/Email Receipt</button>
+                                        <button>Issue Refund</button>
+                                    </div>
+                                    <div class="accordion__results-calculation">
+                                        <div class="accordion__results-row">
+                                            <p>Sub Total:</p>
+                                            <p>$31.13</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tax:</p>
+                                            <p>$0.93</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tip:</p>
+                                            <p>$2.00</p>
+                                        </div>
+                                        <div class="accordion__results-row font-semibold">
+                                            <p>Total:</p>
+                                            <p>$34.06</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__body-details custom-scrollbar">
+                    <div class="modal__details-row">
+                        <h3>Customer</h3>
+                        <p>Greg Blackwell</p>
+                    </div>
+                    <div class="modal__details-row">
+                        <h3>Email</h3>
+                        <p>blackwellgolf75@gmail.com</p>
+                    </div>
+                    <div class="modal__details-row">
+                        <h3>Purchase Date</h3>
+                        <p>August 15, 2022 at 6:36:46 AM</p>
+                    </div>
+                    <div class="modal__details-row">
+                        <h3>Purchase Number</h3>
+                        <p>af0c6a1d-d136-4e53-afeb-ee2ef648c58b</p>
+                    </div>
+                    <div class="modal__details-row">
+                        <h3>Employee Name</h3>
+                        <p>System User</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cash Refund Modal -->
+        <div class="modal cash-refund-modal">
+            <div class="modal__header">
+                <h3 class="modal__header-title">Transaction Details</h3>
+                <button class="modal__header-btn">Close</button>
+            </div>
+
+            <div class="modal__body">
+                <div class="modal__body-collapse">
+                    <div class="modal__body-accordions custom-scrollbar">
+                        <!-- Accordion 1 -->
+                        <div class="accordion">
+                            <div class="accordion__header">
+                                <div class="accordion__header-title">
+                                    <img src="./images/icons/accordion-1.svg" alt="icon" />
+                                    <h4>Total Bill - Split Between 2 Transactions</h4>
+                                </div>
+                                <button class="accordion__header-btn">
+                                    <span class="accordion__header-icon">
+                                        <img src="./images/icons/accordion-btn.svg" alt="icon" />
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="accordion__body">
+                                <ul class="accordion__list">
+                                    <li class="accordion__list-item">
+                                        <p>Hot Diggity Dog</p>
+                                        <p>$4.77</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Keith’s Seattle Salmon</p>
+                                        <p>$2.50</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Titleist Pro V Golf Ball’s</p>
+                                        <p>$55.00</p>
+                                    </li>
+                                </ul>
+                                <div class="accordion__results">
+                                    <div class="accordion__results-buttons">
+                                        <button>Print/Email Receipt</button>
+                                        <button>Issue Refund</button>
+                                    </div>
+                                    <div class="accordion__results-calculation">
+                                        <div class="accordion__results-row">
+                                            <p>Sub Total:</p>
+                                            <p>$62.27</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tax:</p>
+                                            <p>$1.87</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tip:</p>
+                                            <p>$6.00</p>
+                                        </div>
+                                        <div class="accordion__results-row font-semibold">
+                                            <p>Total:</p>
+                                            <p>$70.14</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion 2 -->
+                        <div class="accordion active">
+                            <div class="accordion__header">
+                                <div class="accordion__header-title">
+                                    <img src="./images/icons/accordion-2.png" alt="icon" />
+                                    <h4>Select Items to Refund</h4>
+                                </div>
+                                <div class="accordion__header-select">
+                                    <select name="refund-cash" id="refund-cash">
+                                        <option value="">Refund To: Cash</option>
+                                        <option value="credit-card">Debit Card****8076</option>
+                                        <option value="club-credit-card">Club Debit</option>
+                                        <option value="gift-card">Gift Card</option>
+                                    </select>
+                                    <button class="accordion__header-cancel">Cancel</button>
+                                </div>
+                            </div>
+                            <div class="accordion__body">
+                                <form class="accrodion__form">
+                                    <!-- Row 1 -->
+                                    <div class="accrodion__form-row">
+                                        <div class="accrodion__form-checkbox">
+                                            <input type="checkbox" id="doggity" />
+                                            <label for="doggity">Hot Diggity Dog</label>
+                                        </div>
+                                        <div class="accrodion__form-price">
+                                            <p>$2.38</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Row 2 -->
+                                    <div class="accrodion__form-row">
+                                        <div class="accrodion__form-checkbox">
+                                            <input type="checkbox" id="salmon" checked />
+                                            <label for="salmon">Keith’s Seattle Salmon</label>
+                                        </div>
+                                        <div class="accrodion__form-price">
+                                            <p>$</p>
+                                            <input type="text" value="1.25" />
+                                        </div>
+                                    </div>
+
+                                    <!-- Row 3 -->
+                                    <div class="accrodion__form-row">
+                                        <div class="accrodion__form-checkbox">
+                                            <input type="checkbox" id="golf" checked />
+                                            <label for="golf">Titleist Pro V Golf Ball’s </label>
+                                        </div>
+                                        <div class="accrodion__form-price">
+                                            <p>$</p>
+                                            <input type="text" value="27.50" />
+                                        </div>
+                                    </div>
+
+                                    <!-- Row 4 -->
+                                    <div class="accrodion__form-row">
+                                        <div class="accrodion__form-checkbox">
+                                            <input type="checkbox" id="tip" checked />
+                                            <label for="tip">Tip</label>
+                                        </div>
+                                        <div class="accrodion__form-price">
+                                            <p>$</p>
+                                            <input type="text" value="2.00" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="accordion__results">
+                                            <div>
+                                                <button
+                                                    type="submit"
+                                                    class="accrodion__form-submit"
+                                                >
+                                                    Process Refund
+                                                </button>
+                                            </div>
+
+                                            <div class="accordion__results-calculation">
+                                                <div class="accordion__results-row">
+                                                    <p>Refund Sub Total:</p>
+                                                    <p>$28.75</p>
+                                                </div>
+                                                <div class="accordion__results-row">
+                                                    <p>Refund Tax:</p>
+                                                    <p>$0.86</p>
+                                                </div>
+                                                <div class="accordion__results-row">
+                                                    <p>Refund Tip:</p>
+                                                    <p>$2.00</p>
+                                                </div>
+                                                <div class="accordion__results-row font-semibold">
+                                                    <p>Refund Total:</p>
+                                                    <p>$31.61</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Accordion 3 -->
+                        <div class="accordion">
+                            <div class="accordion__header">
+                                <div class="accordion__header-title">
+                                    <img src="./images/icons/accordion-3.png" alt="icon" />
+                                    <h4>Transaction 2 - Credit Card **** 8076</h4>
+                                </div>
+                                <button class="accordion__header-btn">
+                                    <span class="accordion__header-icon">
+                                        <img src="./images/icons/accordion-btn.svg" alt="icon" />
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="accordion__body">
+                                <ul class="accordion__list">
+                                    <li class="accordion__list-item">
+                                        <p>Hot Diggity Dog</p>
+                                        <p>$2.39</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Keith’s Seattle Salmon</p>
+                                        <p>$1.25</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Titleist Pro V Golf Ball’s</p>
+                                        <p>$27.50</p>
+                                    </li>
+                                </ul>
+                                <div class="accordion__results">
+                                    <div class="accordion__results-buttons">
+                                        <button>Print/Email Receipt</button>
+                                        <button>Issue Refund</button>
+                                    </div>
+                                    <div class="accordion__results-calculation">
+                                        <div class="accordion__results-row">
+                                            <p>Sub Total:</p>
+                                            <p>$31.13</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tax:</p>
+                                            <p>$0.93</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tip:</p>
+                                            <p>$2.00</p>
+                                        </div>
+                                        <div class="accordion__results-row font-semibold">
+                                            <p>Total:</p>
+                                            <p>$34.06</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__body-details custom-scrollbar">
+                    <div class="modal__details-row">
+                        <h3>Customer</h3>
+                        <p>Greg Blackwell</p>
+                    </div>
+                    <div class="modal__details-row">
+                        <h3>Email</h3>
+                        <p>blackwellgolf75@gmail.com</p>
+                    </div>
+                    <div class="modal__details-row">
+                        <h3>Purchase Date</h3>
+                        <p>August 15, 2022 at 6:36:46 AM</p>
+                    </div>
+                    <div class="modal__details-row">
+                        <h3>Purchase Number</h3>
+                        <p>af0c6a1d-d136-4e53-afeb-ee2ef648c58b</p>
+                    </div>
+                    <div class="modal__details-row">
+                        <h3>Employee Name</h3>
+                        <p>System User</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cash Refunded Modal -->
+        <div class="modal cash-refunded-modal">
+            <div class="modal__header">
+                <h3 class="modal__header-title">Transaction Details</h3>
+                <button class="modal__header-btn">Close</button>
+            </div>
+
+            <div class="modal__body">
+                <div class="modal__body-collapse">
+                    <div class="modal__body-accordions custom-scrollbar">
+                        <!-- Accordion 1 -->
+                        <div class="accordion">
+                            <div class="accordion__header">
+                                <div class="accordion__header-title">
+                                    <img src="./images/icons/accordion-1.svg" alt="icon" />
+                                    <h4>Original Total Bill - Split Between 2 Transactions</h4>
+                                </div>
+                                <button class="accordion__header-btn">
+                                    <span class="accordion__header-icon">
+                                        <img src="./images/icons/accordion-btn.svg" alt="icon" />
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="accordion__body">
+                                <ul class="accordion__list">
+                                    <li class="accordion__list-item">
+                                        <p>Hot Diggity Dog</p>
+                                        <p>$4.77</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Keith’s Seattle Salmon</p>
+                                        <p>$2.50</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Titleist Pro V Golf Ball’s</p>
+                                        <p>$55.00</p>
+                                    </li>
+                                </ul>
+                                <div class="accordion__results flex-start">
+                                    <div class="accordion__results-buttons">
+                                        <button>Print/Email Receipt</button>
+                                        <!-- <button>Issue Refund</button> -->
+                                    </div>
+                                    <div class="accordion__results-calculation">
+                                        <div class="accordion__results-row">
+                                            <p>Sub Total:</p>
+                                            <p>$62.27</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tax:</p>
+                                            <p>$1.87</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tip:</p>
+                                            <p>$6.00</p>
+                                        </div>
+                                        <div class="accordion__results-row font-semibold">
+                                            <p>Total:</p>
+                                            <p>$70.14</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion 2 -->
+                        <div class="accordion active">
+                            <div class="accordion__header">
+                                <div class="accordion__header-title">
+                                    <img src="./images/icons/accordion-2.png" alt="icon" />
+                                    <h4>Transaction 1 - Cash</h4>
+                                </div>
+                                <button class="accordion__header-btn">
+                                    <span class="accordion__header-icon">
+                                        <img src="./images/icons/accordion-btn.svg" alt="icon" />
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="accordion__body">
+                                <ul class="accordion__list">
+                                    <li class="accordion__list-item">
+                                        <p>Hot Diggity Dog</p>
+                                        <p>$2.38</p>
+                                    </li>
+                                    <li class="accordion__list-item text-red">
+                                        <p>Keith’s Seattle Salmon</p>
+                                        <p>$1.25</p>
+                                    </li>
+                                    <li class="accordion__list-item text-red">
+                                        <p>Titleist Pro V Golf Ball’s</p>
+                                        <p>$27.50</p>
+                                    </li>
+                                </ul>
+                                <div class="accordion__results flex-start">
+                                    <div class="accordion__results-buttons between">
+                                        <div>
+                                            <button>Print/Email Receipt</button>
+                                            <button>Issue Refund</button>
+                                        </div>
+                                        <div class="accordion__results-note text-red">
+                                            <span>*</span>
+                                            <p>
+                                                Items in red have been refunded back to Credit Card
+                                                **** 8076
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="accordion__results-calculation">
+                                        <div class="accordion__results-row">
+                                            <p>Original Sub Total:</p>
+                                            <p>$31.13</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Original Tax:</p>
+                                            <p>$0.93</p>
+                                        </div>
+                                        <div class="accordion__results-row text-red">
+                                            <p>Tip:</p>
+                                            <p>$2.00</p>
+                                        </div>
+                                        <div class="accordion__results-row font-semibold">
+                                            <p>Original Total:</p>
+                                            <p>$34.06</p>
+                                        </div>
+                                        <div class="accordion__results-row text-red">
+                                            <p>Refund Sub Total:</p>
+                                            <p>$28.75</p>
+                                        </div>
+                                        <div class="accordion__results-row text-red">
+                                            <p>Refund Tax:</p>
+                                            <p>$0.86</p>
+                                        </div>
+                                        <div class="accordion__results-row text-red">
+                                            <p>Refund Tip:</p>
+                                            <p>$2.00</p>
+                                        </div>
+                                        <div class="accordion__results-row text-red font-semibold">
+                                            <p>Refund Total:</p>
+                                            <p>$31.61</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion 3 -->
+                        <div class="accordion">
+                            <div class="accordion__header">
+                                <div class="accordion__header-title">
+                                    <img src="./images/icons/accordion-3.png" alt="icon" />
+                                    <h4>Transaction 2 - Credit Card **** 8076</h4>
+                                </div>
+                                <button class="accordion__header-btn">
+                                    <span class="accordion__header-icon">
+                                        <img src="./images/icons/accordion-btn.svg" alt="icon" />
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="accordion__body">
+                                <ul class="accordion__list">
+                                    <li class="accordion__list-item">
+                                        <p>Hot Diggity Dog</p>
+                                        <p>$2.39</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Keith’s Seattle Salmon</p>
+                                        <p>$1.25</p>
+                                    </li>
+                                    <li class="accordion__list-item">
+                                        <p>Titleist Pro V Golf Ball’s</p>
+                                        <p>$27.50</p>
+                                    </li>
+                                </ul>
+                                <div class="accordion__results">
+                                    <div class="accordion__results-buttons">
+                                        <button>Print/Email Receipt</button>
+                                        <button>Issue Refund</button>
+                                    </div>
+                                    <div class="accordion__results-calculation">
+                                        <div class="accordion__results-row">
+                                            <p>Sub Total:</p>
+                                            <p>$31.13</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tax:</p>
+                                            <p>$0.93</p>
+                                        </div>
+                                        <div class="accordion__results-row">
+                                            <p>Tip:</p>
+                                            <p>$2.00</p>
+                                        </div>
+                                        <div class="accordion__results-row font-semibold">
+                                            <p>Total:</p>
+                                            <p>$34.06</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal__body-details custom-scrollbar">
+                    <div class="modal__details-row">
+                        <h3>Customer</h3>
+                        <p>Greg Blackwell</p>
+                    </div>
+                    <div class="modal__details-row">
+                        <h3>Email</h3>
+                        <p>blackwellgolf75@gmail.com</p>
+                    </div>
+                    <div class="modal__details-row">
+                        <h3>Purchase Date</h3>
+                        <p>August 15, 2022 at 6:36:46 AM</p>
+                    </div>
+                    <div class="modal__details-row">
+                        <h3>Purchase Number</h3>
+                        <p>af0c6a1d-d136-4e53-afeb-ee2ef648c58b</p>
+                    </div>
+                    <div class="modal__details-row">
+                        <h3>Employee Name</h3>
+                        <p>System User</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============== Modals End ================ -->
 
         <!-- ============== Footer Start ================ -->
         <footer class="footer">

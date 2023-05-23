@@ -7,10 +7,21 @@ setWindowHeight();
 window.addEventListener('resize', setWindowHeight, false);
 // ============= Header Menu Buttons
 const headerMenuBtns = document.querySelectorAll('.header__nav-item .header__nav-btn');
+const scoreBtns = document.querySelectorAll('.header__scores-score .header__nav-btn');
 
 headerMenuBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
         btn.classList.toggle('active');
+    });
+});
+
+scoreBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        const activeBtn = document.querySelector('.header__scores-score .header__nav-btn.active');
+        if (!btn.classList.contains('active')) {
+            btn.classList.add('active');
+            activeBtn.classList.remove('active');
+        }
     });
 });
 
@@ -123,7 +134,42 @@ function hideFooterDropdown() {
     footerDropdownContainer.classList.remove('show');
 }
 
-// ==================
+// ================== Modals
+const tableScoreBtns = document.querySelectorAll('.table__row-scores');
+const modalBackdrop = document.querySelector('.modal-backdrop');
+const modalCloseBtns = document.querySelectorAll('.modal__header-btn');
+
+tableScoreBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        const modal = btn.dataset.modal;
+        document.querySelector(`.${modal}`).classList.add('show');
+        modalBackdrop.classList.add('show');
+    });
+});
+
+modalCloseBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        const activeModal = document.querySelector('.modal.show');
+
+        activeModal.classList.remove('show');
+        modalBackdrop.classList.remove('show');
+    });
+});
+
+// ================== Accordions
+const accordions = document.querySelectorAll('.accordion');
+
+accordions.forEach((accord) => {
+    const accordionBtn = accord.querySelector('.accordion__header');
+
+    if (accordionBtn) {
+        accordionBtn.addEventListener('click', () => {
+            accord.classList.toggle('active');
+        });
+    }
+});
+
+// ================== Better Scroll
 let wrapper = document.querySelector('.table-section');
 let bs = new BScroll(wrapper, {
     probeType: 3,
@@ -131,4 +177,5 @@ let bs = new BScroll(wrapper, {
     wheel: true,
     scrollX: true,
     scrollbar: true,
+    click: true,
 });

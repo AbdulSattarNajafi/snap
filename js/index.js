@@ -177,5 +177,4 @@ let bs = new BScroll(wrapper, {
     wheel: true,
     scrollX: true,
     scrollbar: true,
-    click: true,
 });
